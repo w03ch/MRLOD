@@ -1,0 +1,30 @@
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments and local tooling
+.venv/
+venv/
+.env
+.idea/
+.vscode/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Training inputs and large generated artifacts
+data/*
+!data/.gitkeep
+models/
+artifacts/
+*.ckpt
+*.pth
+*.pt
+*.pkl
+*.npz
+
+# Logs and platform files
+*.log
+.DS_Store
+Thumbs.db
