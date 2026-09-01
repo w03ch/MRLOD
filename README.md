@@ -37,7 +37,7 @@ conda activate ENV_NAME
 ```
 
 [SYSTEM_REQUIREMENTS.md](SYSTEM_REQUIREMENTS.md) records the reference
-hardware, NVIDIA driver and environment verification commands.
+hardware, NVIDIA driver and verification commands.
 
 ## Data layout
 
@@ -56,7 +56,7 @@ data/
 
 ## Training and subtype assignment
 
-After activating Conda environment, run one or more datasets from the
+After activating the Conda environment, run the following commands from the
 repository root:
 
 ```powershell
@@ -67,6 +67,12 @@ python multimodal/assign_subtypes.py --datasets tcga_brca_all_clean
 Omit `--datasets` to run all ten configured TCGA datasets
 
 ## datasets and pretrained representations
+
+### Omics datasets
+
+Download TCGA omics data from the
+[NCI Genomic Data Commons (GDC) Data Portal](https://portal.gdc.cancer.gov/)
+or [cBioPortal](https://www.cbioportal.org/datasets).
 
 ### Whole-slide image representations
 
@@ -79,7 +85,7 @@ The file should be placed at `data/TCGA_TITAN_features.pkl`.
 Download `TCGA_Reports.csv.zip` from the official
 [TCGA-Reports dataset](https://doi.org/10.17632/hyg5xkznpx.1).
 
-To reproduce the report embeddings, load
+To generate the report embeddings, load
 [`thomas-sounack/BioClinical-ModernBERT-base`](https://huggingface.co/thomas-sounack/BioClinical-ModernBERT-base)
 with Hugging Face Transformers. Tokenize each report using the default
 tokenizer with dynamic padding and truncation at 8,192 tokens. Run the model in
